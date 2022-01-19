@@ -1,5 +1,7 @@
 # Dynaaminen verkkosivu (2022)
 
+![alt text](https://i.imgur.com/j3vX4ZP.png)
+
 Palautettavat tehtävät ovat omissa brancheissa.
 
 # Getting Started with Create React App
