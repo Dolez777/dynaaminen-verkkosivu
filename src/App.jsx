@@ -1,13 +1,8 @@
-import Calculator from "components/calculator";
 import React from "react";
 import "./App.scss";
 
 function App() {
-	return (
-		<div className="App">
-			<Calculator></Calculator>
-		</div>
-	);
+	return <div className="App">Render mission related things here</div>;
 }
 
 export default App;
