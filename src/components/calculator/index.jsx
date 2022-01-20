@@ -1,13 +1,14 @@
 import { Button, Form } from "react-bootstrap";
 import { useState } from "react";
 const Calculator = () => {
+	//MUUTTUU = STATE
 	const [weight, setWeight] = useState(0);
 	const [bottles, setBottles] = useState(0);
 	const [time, setTime] = useState(0);
 	const [isMale, setIsMale] = useState(true);
 	const [result, setResult] = useState(0);
 
-	const handleSubmit = () => {
+	const calculateBloodAlcohol = () => {
 		console.log(weight);
 		console.log(bottles);
 		console.log(time);
@@ -16,6 +17,7 @@ const Calculator = () => {
 		const grams = Number(litres) * 8 * 4.5;
 		const burning = Number(weight) / 10;
 		const gramsLeft = grams - burning * time;
+
 		if (isMale) {
 			result = gramsLeft / (weight * 0.7);
 		} else {
@@ -80,7 +82,7 @@ const Calculator = () => {
 					/>
 				</Form.Group>
 				<p>Result: {result}</p>
-				<Button onClick={handleSubmit} variant="outline-light">
+				<Button onClick={calculateBloodAlcohol} variant="outline-light">
 					Calculate
 				</Button>{" "}
 			</Form>
