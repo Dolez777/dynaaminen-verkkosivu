@@ -1,0 +1,19 @@
+.image-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 25%);
+	grid-template-rows: repeat(3, 25%);
+	height: 100%;
+	gap: 1em 1em;
+	align-items: stretch;
+	justify-content: center;
+}
+.dog-pic {
+	width: 100%;
+	height: auto;
+}
+.dog-button {
+	background-color: #007558;
+	color: white;
+	padding: 0.5em;
+	border-radius: 0.5em;
+}
