@@ -1,7 +1,13 @@
 import { Button, Form } from "react-bootstrap";
 import { useState } from "react";
+
+//Calculator that calculates blood alcohol level
 const Calculator = () => {
-	//MUUTTUU = STATE
+	/*Array variable jolla 2 nimeä "weight ja setWeight" eli state ja setState eli = useState
+	useState on reactin vakio hook funktio jolla voidaan ylläpitää stateja eli tiloja komponenteissa 
+	state on käytännössä aina muuttuva variable jos statea renderoidaan näkymään se reagoi heti ilman refresh. 
+	Stateihin voidaan kerätä muuttuvaa tietoa jota komponentin logiikka tarvii tai tietoja mitä halutaan näyttää UI:ssa
+	*/
 	const [weight, setWeight] = useState(0);
 	const [bottles, setBottles] = useState(0);
 	const [time, setTime] = useState(0);
