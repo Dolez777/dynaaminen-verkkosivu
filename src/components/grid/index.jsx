@@ -2,38 +2,40 @@ import { useEffect, useState } from "react";
 import "./grid.scss";
 import getDogs from "./../../api/getDogs";
 
-const dogData = [
-	"https://images.dog.ceo/breeds/setter-irish/n02100877_2283.jpg",
-	"https://images.dog.ceo/breeds/cotondetulear/100_2397.jpg",
-	"https://images.dog.ceo/breeds/terrier-norwich/n02094258_3329.jpg",
-	"https://images.dog.ceo/breeds/bulldog-boston/n02096585_1668.jpg",
-	"https://images.dog.ceo/breeds/spaniel-sussex/n02102480_5937.jpg",
-	"https://images.dog.ceo/breeds/mastiff-tibetan/n02108551_12438.jpg",
-	"https://images.dog.ceo/breeds/hound-ibizan/n02091244_147.jpg",
-	"https://images.dog.ceo/breeds/havanese/00100trPORTRAIT_00100_BURST20191222103956878_COVER.jpg",
-	"https://images.dog.ceo/breeds/spaniel-blenheim/n02086646_3536.jpg",
-];
-
 function DogGrid() {
+	/**State johon laitetaan kuva arrayta mitä näytetään UI:ssa */
 	const [imageUrls, setImageUrls] = useState([""]);
-
+	/**Functio jolla haetaan dog apista kuva urlit ja tallennetaan stateen*/
 	const handleGetDogs = () => {
+		/**Kutsutaan getDogs functiota arvolla 9 */
 		getDogs(9)
+			/**Kun axios request on valmis asetetaan response(kuvat) stateen */
 			.then((response) => setImageUrls(response))
-			.catch((error) => {});
+			.catch((error) => {
+				/**Tässä voidaan rakentaa logiikkaa mahdollien virheiden käsittelylle */
+			});
 	};
-
+	/**useEffect on reactin vakio hook functio kuten myös kaikki use alkuiset functiot
+	 * Aina kun komponentti renderoidaan ensimmäisen kerran useEffect ajetaan
+	 * useEffectin tyhjään arrayhyn voi laittaa jonkun useStaten kun se state muuttuu useEffect ajetaan uudestaan
+	 */
 	useEffect(() => {
 		handleGetDogs();
 	}, []);
-
+	/**Loopataan array state array.map:illa
+	 * Kaikilla arraylla on functioita joita voidaan käyttää niiden muokkaamiseen esim .map
+	 * map functio käy jokaisen arrayn indexin läpi ja palauttaa käyttäjän määrittämän value/muuttujan uuteen arrayhyn
+	 * Lähes saman toiminnallisuuden voi tehdä forEach functiolla mutta forEach functio ei palauta uutta arrayta vaan muokkaa alkuperäistä
+	 */
 	const renderDog = imageUrls.map((url) => {
 		return <img className="dog-pic" src={url} alt=""></img>;
 	});
 
 	return (
 		<div className="">
-			<button className="dog-button">Random Dogs</button>
+			<button onClick={handleGetDogs} className="dog-button">
+				Random Dogs
+			</button>
 			<div className="image-grid">{renderDog}</div>
 		</div>
 	);
