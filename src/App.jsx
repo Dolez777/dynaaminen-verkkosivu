@@ -5,7 +5,8 @@ import DogGrid from "./components/grid/index";
 /*Create simple website, that retrieves some data from API service
 1. Create layout mock ---DONE
 2. Use real data from dog.api ---DONE
-3. get dogs by breed
+3. get dogs by breed (UI N SHIT)
+4. handle errors.
 */
 function App() {
 	return (

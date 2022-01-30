@@ -1,7 +1,7 @@
 .image-grid {
 	display: grid;
-	grid-template-columns: repeat(3, 25%);
-	grid-template-rows: repeat(3, 25%);
+	grid-template-columns: repeat(3, 15em);
+	grid-template-rows: repeat(3, 15em);
 	height: 100%;
 	gap: 1em 1em;
 	align-items: stretch;
@@ -9,7 +9,7 @@
 }
 .dog-pic {
 	width: 100%;
-	height: auto;
+	height: 100%;
 }
 .dog-button {
 	background-color: #007558;

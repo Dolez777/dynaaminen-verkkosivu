@@ -5,13 +5,19 @@ import getDogs from "./../../api/getDogs";
 function DogGrid() {
 	/**State johon laitetaan kuva arrayta mitä näytetään UI:ssa */
 	const [imageUrls, setImageUrls] = useState([""]);
+	/**Loading state */
+	const [loading, setLoading] = useState(false);
 	/**Functio jolla haetaan dog apista kuva urlit ja tallennetaan stateen*/
 	const handleGetDogs = () => {
+		setLoading(true);
+
 		/**Kutsutaan getDogs functiota arvolla 9 */
 		getDogs(9)
 			/**Kun axios request on valmis asetetaan response(kuvat) stateen */
 			.then((response) => setImageUrls(response))
+			.then(() => setLoading(false))
 			.catch((error) => {
+				setLoading(false);
 				/**Tässä voidaan rakentaa logiikkaa mahdollien virheiden käsittelylle */
 			});
 	};
@@ -30,15 +36,19 @@ function DogGrid() {
 	const renderDog = imageUrls.map((url) => {
 		return <img className="dog-pic" src={url} alt=""></img>;
 	});
-
-	return (
-		<div className="">
-			<button onClick={handleGetDogs} className="dog-button">
-				Random Dogs
-			</button>
-			<div className="image-grid">{renderDog}</div>
-		</div>
-	);
+	if (loading) {
+		return <div>Loading...</div>;
+	} else {
+		/**HTML ja jsx elementtejen sisälle muuttujia voidaan käyttää laittamalla ne {} sulkeisiin */
+		return (
+			<div className="">
+				<button onClick={handleGetDogs} className="dog-button">
+					Random Dogs
+				</button>
+				<div className="image-grid">{renderDog}</div>
+			</div>
+		);
+	}
 }
 
 export default DogGrid;
