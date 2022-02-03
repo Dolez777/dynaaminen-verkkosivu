@@ -1,6 +1,6 @@
 # Dynaaminen verkkosivu (2022)
 
-![alt text](https://i.imgur.com/j3vX4ZP.png)
+![alt text]
 
 Palautettavat tehtävät ovat omissa brancheissa.
 
