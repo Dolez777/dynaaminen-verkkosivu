@@ -2,15 +2,22 @@
 
 .App {
 	display: flex;
+	flex-direction: column;
 	height: 100%;
 	width: 100%;
 	background-color: #282c34;
 	color: white;
+	align-items: center;
+	gap: 1em;
 }
 
 .container {
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	height: 100%;
 	overflow: hidden;
+}
+
+.button-wrapper {
+	margin-right: 1em;
 }
