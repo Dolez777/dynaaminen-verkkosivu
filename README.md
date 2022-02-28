@@ -2,6 +2,9 @@
 
 Palautettavat tehtävät ovat omissa brancheissa.
 
+[Kuva valmiista tuotoksesta](https://i.imgur.com/26eqX1Y.png)
+)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
