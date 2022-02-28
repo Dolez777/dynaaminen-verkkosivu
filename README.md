@@ -2,8 +2,8 @@
 
 Palautettavat tehtävät ovat omissa brancheissa.
 
+![alt text](https://i.imgur.com/26eqX1Y.png "Kuva")
 [Kuva valmiista tuotoksesta](https://i.imgur.com/26eqX1Y.png)
-)
 
 # Getting Started with Create React App
 
